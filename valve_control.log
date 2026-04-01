@@ -1,0 +1,31 @@
+2026-03-25 08:36:36 | role=admin | zone=1 | action=open | pct=100 | raw={"zone_id":1,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:56:17 | role=admin | zone=1 | action=close | pct=0 | raw={"zone_id":1,"action":"close","valve_pct":0,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:56:17 | Inserting cmd: device_id=1 zone=1 pct=0
+2026-03-25 08:56:17 | Inserted cmd_id=14 device_id=1
+2026-03-25 08:57:47 | role=admin | zone=4 | action=open | pct=100 | raw={"zone_id":4,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:57:47 | Inserting cmd: device_id=1 zone=4 pct=100
+2026-03-25 08:57:47 | Inserted cmd_id=15 device_id=1
+2026-03-25 08:58:09 | role=admin | zone=5 | action=open | pct=100 | raw={"zone_id":5,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:58:09 | Inserting cmd: device_id=1 zone=5 pct=100
+2026-03-25 08:58:09 | Inserted cmd_id=16 device_id=1
+2026-03-25 08:58:52 | role=admin | zone=3 | action=open | pct=100 | raw={"zone_id":3,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:58:52 | Inserting cmd: device_id=1 zone=3 pct=100
+2026-03-25 08:58:52 | Inserted cmd_id=17 device_id=1
+2026-03-25 08:59:35 | role=admin | zone=2 | action=open | pct=100 | raw={"zone_id":2,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 08:59:35 | Inserting cmd: device_id=1 zone=2 pct=100
+2026-03-25 08:59:35 | Inserted cmd_id=18 device_id=1
+2026-03-25 09:00:20 | role=admin | zone=1 | action=open | pct=100 | raw={"zone_id":1,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 09:00:20 | Inserting cmd: device_id=1 zone=1 pct=100
+2026-03-25 09:00:20 | Inserted cmd_id=19 device_id=1
+2026-03-25 09:07:18 | role=admin | zone=1 | action=close | pct=0 | raw={"zone_id":1,"action":"close","valve_pct":0,"reason":"Manual control from dashboard","csrf_token":"7c4927a51816f2345c28a1ae4d189603f669ba35b25c23bc76010524b44858a0"}
+2026-03-25 09:07:18 | Inserting cmd: device_id=1 zone=1 pct=0
+2026-03-25 09:07:18 | Inserted cmd_id=20 device_id=1
+2026-03-25 09:51:09 | role=admin | zone=1 | action=open | pct=100 | raw={"zone_id":1,"action":"open","valve_pct":100,"reason":"Manual control from dashboard","csrf_token":"8827e21223beaa4dab57f106d6744be79926d09c7c3f4f6259ce1fd971f136e9"}
+2026-03-25 09:51:09 | Inserting cmd: device_id=1 zone=1 pct=100
+2026-03-25 09:51:09 | Inserted cmd_id=21 device_id=1
+2026-03-25 12:22:31 | role=admin | zone=1 | action=close | pct=0 | raw={"zone_id":1,"action":"close","valve_pct":0,"reason":"Manual control from dashboard","csrf_token":"8827e21223beaa4dab57f106d6744be79926d09c7c3f4f6259ce1fd971f136e9"}
+2026-03-25 12:22:31 | Inserting cmd: device_id=1 zone=1 pct=0
+2026-03-25 12:22:31 | Inserted cmd_id=22 device_id=1
+2026-03-25 12:24:27 | role=admin | zone=5 | action=close | pct=0 | raw={"zone_id":5,"action":"close","valve_pct":0,"reason":"Manual control from dashboard","csrf_token":"8827e21223beaa4dab57f106d6744be79926d09c7c3f4f6259ce1fd971f136e9"}
+2026-03-25 12:24:27 | Inserting cmd: device_id=1 zone=5 pct=0
+2026-03-25 12:24:27 | Inserted cmd_id=23 device_id=1

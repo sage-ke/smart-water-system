@@ -1,0 +1,16 @@
+const char* SERVER_IP = "http://192.168.1.105";
+```
+
+To find your IP — open CMD on your PC and type:
+```
+ipconfig
+```
+Look for **IPv4 Address** under your WiFi connection. It will look like `192.168.x.x`. Use that number.
+
+---
+
+### To test everything is working after flashing
+
+Open your browser and go to:
+```
+http://localhost/smart_water/api/sensor_data.php?zone_id=1&flow_rate=45.2&total_litres=1230&water_level=87

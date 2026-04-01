@@ -1,0 +1,506 @@
+2026-03-07 19:07:07,121 [INFO] =======================================================
+2026-03-07 19:07:07,121 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-07 19:07:07,122 [INFO] =======================================================
+2026-03-07 21:59:00,758 [INFO] =======================================================
+2026-03-07 21:59:00,762 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-07 21:59:00,762 [INFO] =======================================================
+2026-03-08 14:06:04,720 [INFO] =======================================================
+2026-03-08 14:06:04,720 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 14:06:04,735 [INFO] =======================================================
+2026-03-08 14:08:07,343 [INFO] =======================================================
+2026-03-08 14:08:07,343 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 14:08:07,343 [INFO] =======================================================
+2026-03-08 14:08:07,808 [INFO] DB tables verified / created
+2026-03-08 14:12:33,753 [INFO] MySQL driver: pymysql
+2026-03-08 14:12:33,757 [INFO] =======================================================
+2026-03-08 14:12:33,757 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 14:12:33,757 [INFO] =======================================================
+2026-03-08 14:12:33,819 [INFO] DB tables verified / created
+2026-03-08 14:54:16,974 [INFO] MySQL driver: pymysql
+2026-03-08 14:54:16,974 [INFO] =======================================================
+2026-03-08 14:54:16,974 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 14:54:16,974 [INFO] =======================================================
+2026-03-08 14:54:17,072 [INFO] DB tables verified / created
+2026-03-08 14:54:17,103 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 14:54:17,104 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 14:54:17,113 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 14:54:17,113 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 14:54:17,123 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 14:54:17,132 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 14:54:17,134 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 14:54:17,137 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 14:54:17,150 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 14:54:17,151 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 14:54:17,155 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 14:54:17,160 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 14:54:17,160 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 14:54:17,167 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 14:54:17,175 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 14:54:17,176 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 14:54:17,180 [INFO] 
+=======================================================
+2026-03-08 14:54:17,184 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 14:54:17,185 [INFO] =======================================================
+2026-03-08 18:31:05,680 [INFO] MySQL driver: pymysql
+2026-03-08 18:31:05,680 [INFO] =======================================================
+2026-03-08 18:31:05,680 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 18:31:05,680 [INFO] =======================================================
+2026-03-08 18:31:05,745 [INFO] DB tables verified / created
+2026-03-08 18:31:05,776 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 18:31:05,776 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 18:31:05,785 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 18:31:05,785 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:05,820 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 18:31:05,830 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 18:31:05,830 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:05,835 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 18:31:05,845 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 18:31:05,845 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:05,845 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 18:31:05,845 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 18:31:05,855 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:05,865 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 18:31:05,865 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 18:31:05,872 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:05,875 [INFO] 
+=======================================================
+2026-03-08 18:31:05,875 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 18:31:05,875 [INFO] =======================================================
+2026-03-08 18:31:14,083 [INFO] MySQL driver: pymysql
+2026-03-08 18:31:14,085 [INFO] =======================================================
+2026-03-08 18:31:14,085 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 18:31:14,085 [INFO] =======================================================
+2026-03-08 18:31:14,372 [INFO] DB tables verified / created
+2026-03-08 18:31:14,410 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 18:31:14,411 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 18:31:14,433 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 18:31:14,435 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:14,449 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 18:31:14,459 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 18:31:14,460 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:14,476 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 18:31:14,487 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 18:31:14,487 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:14,493 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 18:31:14,500 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 18:31:14,500 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:14,506 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 18:31:14,521 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 18:31:14,522 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:14,527 [INFO] 
+=======================================================
+2026-03-08 18:31:14,527 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 18:31:14,527 [INFO] =======================================================
+2026-03-08 18:31:46,745 [INFO] MySQL driver: pymysql
+2026-03-08 18:31:46,745 [INFO] =======================================================
+2026-03-08 18:31:46,745 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 18:31:46,745 [INFO] =======================================================
+2026-03-08 18:31:46,965 [INFO] DB tables verified / created
+2026-03-08 18:31:47,017 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 18:31:47,017 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 18:31:47,025 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 18:31:47,030 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:47,035 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 18:31:47,060 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 18:31:47,060 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:47,070 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 18:31:47,081 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 18:31:47,081 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:47,090 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 18:31:47,097 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 18:31:47,097 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:47,120 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 18:31:47,129 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 18:31:47,129 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 18:31:47,135 [INFO] 
+=======================================================
+2026-03-08 18:31:47,135 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 18:31:47,135 [INFO] =======================================================
+2026-03-08 21:09:44,165 [INFO] MySQL driver: pymysql
+2026-03-08 21:09:44,165 [INFO] =======================================================
+2026-03-08 21:09:44,165 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 21:09:44,165 [INFO] =======================================================
+2026-03-08 22:31:12,199 [INFO] MySQL driver: pymysql
+2026-03-08 22:31:12,199 [INFO] =======================================================
+2026-03-08 22:31:12,199 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 22:31:12,199 [INFO] =======================================================
+2026-03-08 23:09:59,423 [INFO] MySQL driver: pymysql
+2026-03-08 23:09:59,424 [INFO] =======================================================
+2026-03-08 23:09:59,424 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 23:09:59,425 [INFO] =======================================================
+2026-03-08 23:09:59,484 [INFO] DB tables verified / created
+2026-03-08 23:09:59,521 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 23:09:59,523 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 23:09:59,531 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 23:09:59,532 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:09:59,545 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 23:09:59,550 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 23:09:59,550 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:09:59,555 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 23:09:59,566 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 23:09:59,566 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:09:59,570 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 23:09:59,578 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 23:09:59,578 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:09:59,581 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 23:09:59,586 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 23:09:59,586 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:09:59,592 [INFO] 
+=======================================================
+2026-03-08 23:09:59,592 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 23:09:59,592 [INFO] =======================================================
+2026-03-08 23:13:50,977 [INFO] MySQL driver: pymysql
+2026-03-08 23:13:50,980 [INFO] =======================================================
+2026-03-08 23:13:50,980 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 23:13:50,980 [INFO] =======================================================
+2026-03-08 23:13:51,035 [INFO] DB tables verified / created
+2026-03-08 23:13:51,048 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 23:13:51,050 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 23:13:51,055 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 23:13:51,056 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:51,066 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 23:13:51,071 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 23:13:51,071 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:51,076 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 23:13:51,082 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 23:13:51,082 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:51,086 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 23:13:51,095 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 23:13:51,095 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:51,100 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 23:13:51,105 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 23:13:51,105 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:51,110 [INFO] 
+=======================================================
+2026-03-08 23:13:51,110 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 23:13:51,110 [INFO] =======================================================
+2026-03-08 23:13:53,698 [INFO] MySQL driver: pymysql
+2026-03-08 23:13:53,698 [INFO] =======================================================
+2026-03-08 23:13:53,698 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 23:13:53,698 [INFO] =======================================================
+2026-03-08 23:13:53,748 [INFO] DB tables verified / created
+2026-03-08 23:13:53,775 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 23:13:53,776 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 23:13:53,784 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 23:13:53,784 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:53,790 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 23:13:53,796 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 23:13:53,796 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:53,801 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 23:13:53,806 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 23:13:53,806 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:53,809 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 23:13:53,814 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 23:13:53,814 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:53,818 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 23:13:53,832 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 23:13:53,832 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:13:53,837 [INFO] 
+=======================================================
+2026-03-08 23:13:53,838 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 23:13:53,838 [INFO] =======================================================
+2026-03-08 23:16:46,066 [INFO] MySQL driver: pymysql
+2026-03-08 23:16:46,066 [INFO] =======================================================
+2026-03-08 23:16:46,067 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 23:16:46,067 [INFO] =======================================================
+2026-03-08 23:16:46,112 [INFO] DB tables verified / created
+2026-03-08 23:16:46,123 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 23:16:46,123 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 23:16:46,129 [INFO]   Zone 1: loaded 0 rows
+2026-03-08 23:16:46,129 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:16:46,136 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 23:16:46,142 [INFO]   Zone 2: loaded 0 rows
+2026-03-08 23:16:46,142 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:16:46,147 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 23:16:46,151 [INFO]   Zone 3: loaded 0 rows
+2026-03-08 23:16:46,152 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:16:46,156 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 23:16:46,161 [INFO]   Zone 4: loaded 0 rows
+2026-03-08 23:16:46,162 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:16:46,165 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 23:16:46,168 [INFO]   Zone 5: loaded 0 rows
+2026-03-08 23:16:46,168 [WARNING]   Only 0 rows — need ≥10, skipping.
+2026-03-08 23:16:46,168 [INFO] 
+=======================================================
+2026-03-08 23:16:46,168 [INFO]   Done — 0 forecasts written, 0 anomalies logged
+2026-03-08 23:16:46,168 [INFO] =======================================================
+2026-03-08 23:17:52,337 [INFO] MySQL driver: pymysql
+2026-03-08 23:17:52,337 [INFO] =======================================================
+2026-03-08 23:17:52,337 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-08 23:17:52,337 [INFO] =======================================================
+2026-03-08 23:17:52,380 [INFO] DB tables verified / created
+2026-03-08 23:17:52,391 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-08 23:17:52,392 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-08 23:17:52,508 [INFO]   Zone 1: loaded 2160 rows
+2026-03-08 23:18:15,788 [INFO]   Model MAE — flow: 7.946, level: 0.943
+2026-03-08 23:18:16,790 [INFO]   Saved 7 forecast rows
+2026-03-08 23:18:17,346 [INFO]   Detected 108 anomalies (0 escalated)
+2026-03-08 23:18:17,351 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-08 23:18:17,465 [INFO]   Zone 2: loaded 2160 rows
+2026-03-08 23:18:40,568 [INFO]   Model MAE — flow: 6.750, level: 1.236
+2026-03-08 23:18:41,525 [INFO]   Saved 7 forecast rows
+2026-03-08 23:18:42,203 [INFO]   Detected 108 anomalies (0 escalated)
+2026-03-08 23:18:42,206 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-08 23:18:42,369 [INFO]   Zone 3: loaded 2160 rows
+2026-03-08 23:19:06,114 [INFO]   Model MAE — flow: 8.671, level: 0.401
+2026-03-08 23:19:07,037 [INFO]   Saved 7 forecast rows
+2026-03-08 23:19:07,557 [INFO]   Detected 108 anomalies (0 escalated)
+2026-03-08 23:19:07,557 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-08 23:19:07,677 [INFO]   Zone 4: loaded 2160 rows
+2026-03-08 23:19:29,362 [INFO]   Model MAE — flow: 6.158, level: 1.118
+2026-03-08 23:19:30,356 [INFO]   Saved 7 forecast rows
+2026-03-08 23:19:30,885 [INFO]   Detected 108 anomalies (0 escalated)
+2026-03-08 23:19:30,889 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-08 23:19:30,983 [INFO]   Zone 5: loaded 2160 rows
+2026-03-08 23:19:50,847 [INFO]   Model MAE — flow: 6.342, level: 2.316
+2026-03-08 23:19:51,892 [INFO]   Saved 7 forecast rows
+2026-03-08 23:19:52,392 [INFO]   Detected 108 anomalies (0 escalated)
+2026-03-08 23:19:52,395 [INFO] 
+=======================================================
+2026-03-08 23:19:52,395 [INFO]   Done — 35 forecasts written, 540 anomalies logged
+2026-03-08 23:19:52,396 [INFO] =======================================================
+2026-03-11 00:03:58,300 [INFO] MySQL driver: pymysql
+2026-03-11 00:03:58,300 [INFO] =======================================================
+2026-03-11 00:03:58,300 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-11 00:03:58,306 [INFO] =======================================================
+2026-03-11 00:03:58,427 [INFO] DB tables verified / created
+2026-03-11 00:03:58,490 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-11 00:03:58,490 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-11 00:03:58,684 [INFO]   Zone 1: loaded 2112 rows
+2026-03-11 00:04:43,228 [INFO]   Model MAE — flow: 7.882, level: 0.544
+2026-03-11 00:04:45,033 [INFO]   Saved 7 forecast rows
+2026-03-11 00:04:46,432 [INFO]   Detected 106 anomalies (64 escalated)
+2026-03-11 00:04:46,442 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-11 00:04:46,677 [INFO]   Zone 2: loaded 2112 rows
+2026-03-11 00:05:35,823 [INFO]   Model MAE — flow: 6.673, level: 0.697
+2026-03-11 00:05:38,003 [INFO]   Saved 7 forecast rows
+2026-03-11 00:05:39,556 [INFO]   Detected 106 anomalies (52 escalated)
+2026-03-11 00:05:39,562 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-11 00:05:39,931 [INFO]   Zone 3: loaded 2112 rows
+2026-03-11 00:06:21,793 [INFO]   Model MAE — flow: 8.403, level: 0.271
+2026-03-11 00:06:23,761 [INFO]   Saved 7 forecast rows
+2026-03-11 00:06:25,596 [INFO]   Detected 106 anomalies (36 escalated)
+2026-03-11 00:06:25,605 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-11 00:06:26,020 [INFO]   Zone 4: loaded 2112 rows
+2026-03-11 00:07:08,971 [INFO]   Model MAE — flow: 6.102, level: 0.640
+2026-03-11 00:07:10,716 [INFO]   Saved 7 forecast rows
+2026-03-11 00:07:12,849 [INFO]   Detected 106 anomalies (29 escalated)
+2026-03-11 00:07:12,856 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-11 00:07:13,186 [INFO]   Zone 5: loaded 2112 rows
+2026-03-11 00:07:54,185 [INFO]   Model MAE — flow: 6.229, level: 1.701
+2026-03-11 00:07:56,066 [INFO]   Saved 7 forecast rows
+2026-03-11 00:07:57,838 [INFO]   Detected 106 anomalies (31 escalated)
+2026-03-11 00:07:57,846 [INFO] 
+=======================================================
+2026-03-11 00:07:57,847 [INFO]   Done — 35 forecasts written, 530 anomalies logged
+2026-03-11 00:07:57,847 [INFO] =======================================================
+2026-03-18 17:10:03,346 [INFO] MySQL driver: pymysql
+2026-03-18 17:10:03,346 [INFO] =======================================================
+2026-03-18 17:10:03,348 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-18 17:10:03,348 [INFO] =======================================================
+2026-03-18 17:10:03,431 [INFO] DB tables verified / created
+2026-03-18 17:10:03,459 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-18 17:10:03,461 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-18 17:10:03,546 [INFO]   Zone 1: loaded 1927 rows
+2026-03-18 17:10:21,721 [INFO]   Model MAE — flow: 8.221, level: 0.258
+2026-03-18 17:10:22,557 [INFO]   Saved 7 forecast rows
+2026-03-18 17:10:23,111 [INFO]   Detected 97 anomalies (64 escalated)
+2026-03-18 17:10:23,115 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-18 17:10:23,215 [INFO]   Zone 2: loaded 1927 rows
+2026-03-18 17:10:41,981 [INFO]   Model MAE — flow: 6.606, level: 0.251
+2026-03-18 17:10:42,811 [INFO]   Saved 7 forecast rows
+2026-03-18 17:10:43,385 [INFO]   Detected 97 anomalies (42 escalated)
+2026-03-18 17:10:43,388 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-18 17:10:43,499 [INFO]   Zone 3: loaded 1927 rows
+2026-03-18 17:11:06,145 [INFO]   Model MAE — flow: 8.375, level: 0.286
+2026-03-18 17:11:07,131 [INFO]   Saved 7 forecast rows
+2026-03-18 17:11:07,637 [INFO]   Detected 97 anomalies (20 escalated)
+2026-03-18 17:11:07,641 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-18 17:11:07,726 [INFO]   Zone 4: loaded 1927 rows
+2026-03-18 17:11:25,673 [INFO]   Model MAE — flow: 6.067, level: 0.247
+2026-03-18 17:11:26,641 [INFO]   Saved 7 forecast rows
+2026-03-18 17:11:27,171 [INFO]   Detected 97 anomalies (53 escalated)
+2026-03-18 17:11:27,177 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-18 17:11:27,266 [INFO]   Zone 5: loaded 1927 rows
+2026-03-18 17:11:49,077 [INFO]   Model MAE — flow: 6.081, level: 0.331
+2026-03-18 17:11:50,169 [INFO]   Saved 7 forecast rows
+2026-03-18 17:11:50,821 [INFO]   Detected 97 anomalies (49 escalated)
+2026-03-18 17:11:50,826 [INFO] 
+=======================================================
+2026-03-18 17:11:50,826 [INFO]   Done — 35 forecasts written, 485 anomalies logged
+2026-03-18 17:11:50,826 [INFO] =======================================================
+2026-03-19 16:51:44,332 [INFO] MySQL driver: pymysql
+2026-03-19 16:51:44,338 [INFO] =======================================================
+2026-03-19 16:51:44,338 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-19 16:51:44,338 [INFO] =======================================================
+2026-03-19 16:51:44,495 [INFO] DB tables verified / created
+2026-03-19 16:51:44,560 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-19 16:51:44,563 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-19 16:51:44,791 [INFO]   Zone 1: loaded 1914 rows
+2026-03-19 16:52:10,654 [INFO]   Model MAE — flow: 8.910, level: 0.260
+2026-03-19 16:52:12,810 [INFO]   Saved 7 forecast rows
+2026-03-19 16:52:14,032 [INFO]   Detected 96 anomalies (15 escalated)
+2026-03-19 16:52:14,040 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-19 16:52:14,172 [INFO]   Zone 2: loaded 1914 rows
+2026-03-19 16:52:37,480 [INFO]   Model MAE — flow: 6.835, level: 0.262
+2026-03-19 16:52:39,737 [INFO]   Saved 7 forecast rows
+2026-03-19 16:52:40,822 [INFO]   Detected 96 anomalies (20 escalated)
+2026-03-19 16:52:40,826 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-19 16:52:40,940 [INFO]   Zone 3: loaded 1915 rows
+2026-03-19 16:53:05,034 [INFO]   Model MAE — flow: 8.587, level: 0.290
+2026-03-19 16:53:07,719 [INFO]   Saved 7 forecast rows
+2026-03-19 16:53:09,011 [INFO]   Detected 96 anomalies (19 escalated)
+2026-03-19 16:53:09,012 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-19 16:53:09,203 [INFO]   Zone 4: loaded 1916 rows
+2026-03-19 16:53:31,722 [INFO]   Model MAE — flow: 6.321, level: 0.266
+2026-03-19 16:53:33,697 [INFO]   Saved 7 forecast rows
+2026-03-19 16:53:34,789 [INFO]   Detected 96 anomalies (15 escalated)
+2026-03-19 16:53:34,793 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-19 16:53:34,935 [INFO]   Zone 5: loaded 1917 rows
+2026-03-19 16:54:02,419 [INFO]   Model MAE — flow: 6.554, level: 0.273
+2026-03-19 16:54:04,104 [INFO]   Saved 7 forecast rows
+2026-03-19 16:54:05,333 [INFO]   Detected 96 anomalies (16 escalated)
+2026-03-19 16:54:05,341 [INFO] 
+=======================================================
+2026-03-19 16:54:05,341 [INFO]   Done — 35 forecasts written, 480 anomalies logged
+2026-03-19 16:54:05,341 [INFO] =======================================================
+2026-03-19 16:55:36,280 [INFO] MySQL driver: pymysql
+2026-03-19 16:55:36,280 [INFO] =======================================================
+2026-03-19 16:55:36,280 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-19 16:55:36,280 [INFO] =======================================================
+2026-03-19 16:55:36,352 [INFO] DB tables verified / created
+2026-03-19 16:55:36,371 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-19 16:55:36,371 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-19 16:55:36,501 [INFO]   Zone 1: loaded 1921 rows
+2026-03-19 16:56:00,933 [INFO]   Model MAE — flow: 9.084, level: 0.269
+2026-03-19 16:56:02,553 [INFO]   Saved 7 forecast rows
+2026-03-19 16:56:03,850 [INFO]   Detected 96 anomalies (21 escalated)
+2026-03-19 16:56:03,855 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-19 16:56:04,034 [INFO]   Zone 2: loaded 1922 rows
+2026-03-19 16:56:31,689 [INFO]   Model MAE — flow: 7.031, level: 0.269
+2026-03-19 16:56:33,637 [INFO]   Saved 7 forecast rows
+2026-03-19 16:56:34,559 [INFO]   Detected 97 anomalies (24 escalated)
+2026-03-19 16:56:34,565 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-19 16:56:34,740 [INFO]   Zone 3: loaded 1923 rows
+2026-03-19 16:57:01,251 [INFO]   Model MAE — flow: 8.656, level: 0.302
+2026-03-19 16:57:03,571 [INFO]   Saved 7 forecast rows
+2026-03-19 16:57:04,741 [INFO]   Detected 97 anomalies (27 escalated)
+2026-03-19 16:57:04,749 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-19 16:57:04,903 [INFO]   Zone 4: loaded 1923 rows
+2026-03-19 16:57:29,355 [INFO]   Model MAE — flow: 6.393, level: 0.276
+2026-03-19 16:57:31,168 [INFO]   Saved 7 forecast rows
+2026-03-19 16:57:32,349 [INFO]   Detected 97 anomalies (21 escalated)
+2026-03-19 16:57:32,352 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-19 16:57:32,686 [INFO]   Zone 5: loaded 1924 rows
+2026-03-19 16:57:58,873 [INFO]   Model MAE — flow: 6.578, level: 0.288
+2026-03-19 16:58:00,689 [INFO]   Saved 7 forecast rows
+2026-03-19 16:58:02,026 [INFO]   Detected 97 anomalies (24 escalated)
+2026-03-19 16:58:02,033 [INFO] 
+=======================================================
+2026-03-19 16:58:02,034 [INFO]   Done — 35 forecasts written, 484 anomalies logged
+2026-03-19 16:58:02,034 [INFO] =======================================================
+2026-03-19 17:10:35,097 [INFO] MySQL driver: pymysql
+2026-03-19 17:10:35,106 [INFO] =======================================================
+2026-03-19 17:10:35,106 [INFO]   SWDS Meru ML Prediction Engine  —  starting
+2026-03-19 17:10:35,106 [INFO] =======================================================
+2026-03-19 17:10:35,194 [INFO] DB tables verified / created
+2026-03-19 17:10:35,229 [INFO] Found 5 zone(s): ['Zone A', 'Zone B', 'Zone C', 'Zone D', 'Zone E']
+2026-03-19 17:10:35,229 [INFO] 
+--- Zone 1: Zone A ---
+2026-03-19 17:10:35,370 [INFO]   Zone 1: loaded 1949 rows
+2026-03-19 17:11:02,769 [INFO]   Model MAE — flow: 8.945, level: 0.348
+2026-03-19 17:11:05,095 [INFO]   Saved 7 forecast rows
+2026-03-19 17:11:06,663 [INFO]   Detected 98 anomalies (50 escalated)
+2026-03-19 17:11:06,666 [INFO] 
+--- Zone 2: Zone B ---
+2026-03-19 17:11:06,806 [INFO]   Zone 2: loaded 1950 rows
+2026-03-19 17:11:34,096 [INFO]   Model MAE — flow: 7.329, level: 0.299
+2026-03-19 17:11:36,046 [INFO]   Saved 7 forecast rows
+2026-03-19 17:11:37,336 [INFO]   Detected 98 anomalies (66 escalated)
+2026-03-19 17:11:37,346 [INFO] 
+--- Zone 3: Zone C ---
+2026-03-19 17:11:37,539 [INFO]   Zone 3: loaded 1951 rows
+2026-03-19 17:12:03,949 [INFO]   Model MAE — flow: 9.246, level: 0.325
+2026-03-19 17:12:05,947 [INFO]   Saved 7 forecast rows
+2026-03-19 17:12:07,411 [INFO]   Detected 98 anomalies (56 escalated)
+2026-03-19 17:12:07,417 [INFO] 
+--- Zone 4: Zone D ---
+2026-03-19 17:12:07,638 [INFO]   Zone 4: loaded 1952 rows
+2026-03-19 17:12:33,238 [INFO]   Model MAE — flow: 6.825, level: 0.316
+2026-03-19 17:12:35,770 [INFO]   Saved 7 forecast rows
+2026-03-19 17:12:37,911 [INFO]   Detected 98 anomalies (56 escalated)
+2026-03-19 17:12:37,916 [INFO] 
+--- Zone 5: Zone E ---
+2026-03-19 17:12:38,213 [INFO]   Zone 5: loaded 1953 rows
+2026-03-19 17:13:03,287 [INFO]   Model MAE — flow: 6.806, level: 0.307
+2026-03-19 17:13:04,814 [INFO]   Saved 7 forecast rows
+2026-03-19 17:13:05,863 [INFO]   Detected 98 anomalies (74 escalated)
+2026-03-19 17:13:05,866 [INFO] 
+=======================================================
+2026-03-19 17:13:05,866 [INFO]   Done — 35 forecasts written, 490 anomalies logged
+2026-03-19 17:13:05,866 [INFO] =======================================================

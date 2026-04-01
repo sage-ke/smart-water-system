@@ -1,0 +1,272 @@
+-- ============================================================
+--  SMART WATER DISTRIBUTION SYSTEM — MERU
+--  Full Database Schema v2.0
+--  Includes: Hardware IoT layer + Data Science layer
+--
+--  Run this in phpMyAdmin → SQL tab
+-- ============================================================
+
+CREATE DATABASE IF NOT EXISTS meru;
+USE meru;
+
+-- ============================================================
+--  USERS — System accounts
+-- ============================================================
+CREATE TABLE IF NOT EXISTS users (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    full_name   VARCHAR(100) NOT NULL,
+    email       VARCHAR(100) NOT NULL UNIQUE,
+    password    VARCHAR(255) NOT NULL,
+    role        ENUM('admin','operator','viewer') DEFAULT 'viewer',
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ============================================================
+--  WATER ZONES — Distribution zones
+-- ============================================================
+CREATE TABLE IF NOT EXISTS water_zones (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    zone_name    VARCHAR(100) NOT NULL,
+    location     VARCHAR(150),
+    latitude     DECIMAL(10,7),          -- GPS lat for mapping
+    longitude    DECIMAL(10,7),          -- GPS lon for mapping
+    pipe_length_m FLOAT,                 -- Total pipe length in metres
+    population   INT DEFAULT 0,          -- People served
+    status        ENUM('active','inactive','maintenance') DEFAULT 'active',
+    valve_status  ENUM('OPEN','CLOSED') DEFAULT 'OPEN',
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ============================================================
+--  HARDWARE DEVICES — IoT sensors/controllers per zone
+--  Each device has a unique API key for secure data posting
+-- ============================================================
+CREATE TABLE IF NOT EXISTS hardware_devices (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id      INT,
+    device_name  VARCHAR(100) NOT NULL,
+    device_type  ENUM('sensor_node','valve_controller','pump_controller','gateway') DEFAULT 'sensor_node',
+    device_code  VARCHAR(50) UNIQUE NOT NULL,   -- e.g. SWDS-Z1-001
+    api_key      VARCHAR(64) UNIQUE NOT NULL,   -- Secret key for this device
+    firmware_version VARCHAR(20) DEFAULT '1.0.0',
+    ip_address   VARCHAR(45),                   -- Last known IP
+    is_online    TINYINT(1) DEFAULT 0,
+    last_seen    TIMESTAMP NULL,
+    battery_pct  TINYINT UNSIGNED DEFAULT 100,  -- 0-100%
+    signal_strength TINYINT DEFAULT 0,          -- RSSI dBm approximation
+    notes        TEXT,
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id) REFERENCES water_zones(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  SENSOR READINGS — Raw data from hardware devices
+--  Devices POST to api/ingest.php using their api_key
+-- ============================================================
+CREATE TABLE IF NOT EXISTS sensor_readings (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    device_id       INT,
+    zone_id         INT,
+    flow_rate       DECIMAL(8,2),       -- L/min
+    pressure        DECIMAL(8,2),       -- Bar
+    water_level     DECIMAL(5,2),       -- % of tank capacity
+    temperature     DECIMAL(5,2),       -- °C
+    turbidity       DECIMAL(6,2),       -- NTU (water clarity)
+    ph_level        DECIMAL(4,2),       -- pH 0-14
+    tds_ppm         INT,                -- Total Dissolved Solids (ppm)
+    valve_open_pct  TINYINT DEFAULT 100,-- Valve open percentage 0-100
+    pump_status     TINYINT(1) DEFAULT 0,
+    recorded_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (device_id) REFERENCES hardware_devices(id) ON DELETE SET NULL,
+    FOREIGN KEY (zone_id)   REFERENCES water_zones(id) ON DELETE SET NULL,
+    INDEX idx_zone_time (zone_id, recorded_at),
+    INDEX idx_device_time (device_id, recorded_at)
+);
+
+-- ============================================================
+--  VALVE / PUMP COMMANDS — Sent from dashboard to hardware
+--  Hardware polls api/commands.php for pending commands
+-- ============================================================
+CREATE TABLE IF NOT EXISTS device_commands (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    device_id    INT NOT NULL,
+    command_type ENUM('set_valve','set_pump','reboot','calibrate') NOT NULL,
+    payload      JSON,                  -- e.g. {"valve_pct": 75}
+    status       ENUM('pending','sent','acknowledged','failed') DEFAULT 'pending',
+    issued_by    INT,                   -- user_id who sent it
+    issued_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ack_at       TIMESTAMP NULL,
+    FOREIGN KEY (device_id) REFERENCES hardware_devices(id) ON DELETE CASCADE,
+    FOREIGN KEY (issued_by) REFERENCES users(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  ALERTS — System warnings
+-- ============================================================
+CREATE TABLE IF NOT EXISTS alerts (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id     INT,
+    device_id   INT,
+    alert_type  VARCHAR(100),
+    message     TEXT,
+    severity    ENUM('low','medium','high','critical') DEFAULT 'medium',
+    is_resolved TINYINT(1) DEFAULT 0,
+    resolved_by INT,
+    resolved_at TIMESTAMP NULL,
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id)     REFERENCES water_zones(id) ON DELETE SET NULL,
+    FOREIGN KEY (device_id)   REFERENCES hardware_devices(id) ON DELETE SET NULL,
+    FOREIGN KEY (resolved_by) REFERENCES users(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  DATA SCIENCE — ML PREDICTIONS
+--  Stores forecasted values generated by Python scripts
+-- ============================================================
+CREATE TABLE IF NOT EXISTS predictions (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id         INT,
+    predict_date    DATE NOT NULL,          -- Date being predicted
+    predicted_flow  DECIMAL(8,2),           -- Forecasted flow (L/min)
+    predicted_level DECIMAL(5,2),           -- Forecasted water level (%)
+    predicted_demand DECIMAL(10,2),         -- Forecasted demand (litres)
+    confidence_pct  TINYINT,               -- Model confidence 0-100
+    model_version   VARCHAR(20),
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id) REFERENCES water_zones(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  DATA SCIENCE — ANOMALY LOG
+--  Records anomalies detected by the ML anomaly detector
+-- ============================================================
+CREATE TABLE IF NOT EXISTS anomalies (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id         INT,
+    device_id       INT,
+    reading_id      INT,
+    anomaly_type    ENUM('flow_spike','pressure_drop','level_drop','quality_issue','leak_suspected') NOT NULL,
+    expected_value  DECIMAL(10,2),
+    actual_value    DECIMAL(10,2),
+    deviation_pct   DECIMAL(6,2),
+    severity_score  DECIMAL(4,2),           -- 0.0 to 1.0
+    is_confirmed    TINYINT(1) DEFAULT 0,   -- Manually confirmed by operator
+    notes           TEXT,
+    detected_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id)   REFERENCES water_zones(id) ON DELETE SET NULL,
+    FOREIGN KEY (device_id) REFERENCES hardware_devices(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  DATA SCIENCE — WATER QUALITY INDEX (computed daily)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS water_quality_index (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id     INT,
+    calc_date   DATE NOT NULL,
+    avg_ph      DECIMAL(4,2),
+    avg_turbidity DECIMAL(6,2),
+    avg_tds     INT,
+    avg_temp    DECIMAL(5,2),
+    wqi_score   DECIMAL(5,2),           -- 0-100, 100 = perfect
+    wqi_grade   ENUM('Excellent','Good','Fair','Poor','Very Poor'),
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id) REFERENCES water_zones(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  MAINTENANCE LOGS
+-- ============================================================
+CREATE TABLE IF NOT EXISTS maintenance_logs (
+    id             INT AUTO_INCREMENT PRIMARY KEY,
+    zone_id        INT,
+    device_id      INT,
+    title          VARCHAR(150) NOT NULL,
+    description    TEXT,
+    status         ENUM('scheduled','in_progress','completed') DEFAULT 'scheduled',
+    scheduled_date DATE,
+    completed_date DATE,
+    technician     VARCHAR(100),
+    cost_kes       DECIMAL(10,2) DEFAULT 0,   -- Cost in KES
+    created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (zone_id)   REFERENCES water_zones(id) ON DELETE SET NULL,
+    FOREIGN KEY (device_id) REFERENCES hardware_devices(id) ON DELETE SET NULL
+);
+
+-- ============================================================
+--  SYSTEM SETTINGS
+-- ============================================================
+CREATE TABLE IF NOT EXISTS system_settings (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    setting_key VARCHAR(100) UNIQUE NOT NULL,
+    setting_val TEXT,
+    description VARCHAR(255),
+    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- ============================================================
+--  SAMPLE DATA
+-- ============================================================
+
+-- Zones with GPS coords (Meru Town area)
+INSERT INTO water_zones (zone_name, location, latitude, longitude, pipe_length_m, population, status, valve_status) VALUES
+('Zone A — North Meru',  'Northern Meru Town',  0.0469,  37.6500, 4500, 12400, 'active', 'OPEN'),
+('Zone B — South Meru',  'Southern Meru Town',  0.0320,  37.6480, 3800, 9800,  'active', 'OPEN'),
+('Zone C — East Meru',   'Eastern Meru Town',   0.0410,  37.6620, 5200, 15200, 'active', 'OPEN'),
+('Zone D — West Meru',   'Western Meru Town',   0.0350,  37.6350, 2900, 7600,  'maintenance', 'CLOSED'),
+('Zone E — Industrial',  'Industrial Area Meru', 0.0280, 37.6700, 6100, 3200,  'active', 'OPEN');
+
+-- Hardware Devices
+INSERT INTO hardware_devices (zone_id, device_name, device_type, device_code, api_key, firmware_version, is_online, battery_pct, signal_strength) VALUES
+(1, 'Zone A Sensor Node',    'sensor_node',      'SWDS-Z1-SN01', SHA2('zone_a_sensor_key_2024',256),    '2.1.0', 1, 87, -65),
+(1, 'Zone A Valve Control',  'valve_controller', 'SWDS-Z1-VC01', SHA2('zone_a_valve_key_2024',256),     '2.0.0', 1, 100, -60),
+(2, 'Zone B Sensor Node',    'sensor_node',      'SWDS-Z2-SN01', SHA2('zone_b_sensor_key_2024',256),    '2.1.0', 1, 72, -70),
+(2, 'Zone B Valve Control',  'valve_controller', 'SWDS-Z2-VC01', SHA2('zone_b_valve_key_2024',256),     '2.0.0', 0, 45, -85),
+(3, 'Zone C Sensor Node',    'sensor_node',      'SWDS-Z3-SN01', SHA2('zone_c_sensor_key_2024',256),    '2.1.0', 1, 91, -58),
+(3, 'Zone C Gateway',        'gateway',          'SWDS-Z3-GW01', SHA2('zone_c_gateway_key_2024',256),   '1.5.0', 1, 100, -50),
+(4, 'Zone D Pump Control',   'pump_controller',  'SWDS-Z4-PC01', SHA2('zone_d_pump_key_2024',256),      '2.0.0', 0, 0,  0),
+(5, 'Zone E Sensor Node',    'sensor_node',      'SWDS-Z5-SN01', SHA2('zone_e_sensor_key_2024',256),    '2.1.0', 1, 63, -72);
+
+-- Sensor readings
+INSERT INTO sensor_readings (device_id, zone_id, flow_rate, pressure, water_level, temperature, turbidity, ph_level, tds_ppm, valve_open_pct, pump_status) VALUES
+(1, 1, 45.20, 3.50, 78.0, 22.5, 1.2, 7.1, 320, 100, 1),
+(3, 2, 38.10, 3.10, 65.0, 23.0, 2.1, 7.3, 410, 80,  1),
+(5, 3, 52.80, 3.80, 88.0, 21.8, 0.8, 7.0, 290, 100, 1),
+(7, 4,  0.00, 0.00, 42.0, 22.1, 4.5, 6.8, 580, 0,   0),
+(8, 5, 61.40, 4.10, 91.0, 22.8, 1.5, 7.2, 350, 100, 1);
+
+-- Alerts
+INSERT INTO alerts (zone_id, device_id, alert_type, message, severity) VALUES
+(2, 4, 'Device Offline',    'Zone B valve controller has gone offline. Battery may be depleted.',     'high'),
+(4, 7, 'Pump Failure',      'Zone D pump controller offline. Zone D is under maintenance.',           'critical'),
+(2, 3, 'Low Pressure',      'Zone B pressure dropped below 3.2 Bar. Check for possible pipe leak.',  'high'),
+(4, NULL,'Low Water Level', 'Zone D tank at 42%. Refill required within 24 hours.',                  'medium');
+
+-- Predictions (next 7 days for zone 1)
+INSERT INTO predictions (zone_id, predict_date, predicted_flow, predicted_level, predicted_demand, confidence_pct, model_version) VALUES
+(1, DATE_ADD(CURDATE(), INTERVAL 1 DAY), 46.5, 75.2, 67032, 88, 'v1.2'),
+(1, DATE_ADD(CURDATE(), INTERVAL 2 DAY), 44.1, 71.8, 63504, 85, 'v1.2'),
+(1, DATE_ADD(CURDATE(), INTERVAL 3 DAY), 48.3, 74.1, 69552, 83, 'v1.2'),
+(2, DATE_ADD(CURDATE(), INTERVAL 1 DAY), 39.2, 62.4, 56448, 86, 'v1.2'),
+(3, DATE_ADD(CURDATE(), INTERVAL 1 DAY), 54.1, 85.3, 77904, 91, 'v1.2');
+
+-- Water Quality Index
+INSERT INTO water_quality_index (zone_id, calc_date, avg_ph, avg_turbidity, avg_tds, avg_temp, wqi_score, wqi_grade) VALUES
+(1, CURDATE(), 7.1, 1.2, 320, 22.5, 91.5, 'Excellent'),
+(2, CURDATE(), 7.3, 2.1, 410, 23.0, 78.2, 'Good'),
+(3, CURDATE(), 7.0, 0.8, 290, 21.8, 94.1, 'Excellent'),
+(4, CURDATE(), 6.8, 4.5, 580, 22.1, 52.3, 'Fair'),
+(5, CURDATE(), 7.2, 1.5, 350, 22.8, 86.7, 'Good');
+
+-- System settings
+INSERT INTO system_settings (setting_key, setting_val, description) VALUES
+('system_name',       'SWDS Meru',         'Name of the system'),
+('alert_flow_min',    '10.0',              'Min flow rate before low-flow alert (L/min)'),
+('alert_pressure_min','2.5',               'Min pressure before alert (Bar)'),
+('alert_level_min',   '20',                'Min tank level % before alert'),
+('alert_ph_min',      '6.5',               'Min safe pH level'),
+('alert_ph_max',      '8.5',               'Max safe pH level'),
+('alert_turbidity_max','4.0',              'Max safe turbidity (NTU)'),
+('api_rate_limit',    '60',                'Max API calls per device per minute'),
+('prediction_days',   '7',                 'How many days ahead to predict'),
+('wqi_calc_hour',     '2',                 'Hour (24h) to run daily WQI calculation');
