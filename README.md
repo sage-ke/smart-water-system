@@ -160,5 +160,5 @@ README.md
 
 Kelvin Mwangi  
 Bachelor of Science in Mathematics and Physics  
-Meru university of science and technology
+Meru University of Science and Technology
 Kenya
